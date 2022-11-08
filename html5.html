@@ -1,0 +1,731 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857143; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; tab-size: 4; background-position: inherit inherit; background-repeat: inherit inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) { 
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; }
+button, input, select, textarea { color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.701961); color: rgb(85, 85, 85); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right-width: 0px; background-color: inherit; }
+.CodeMirror-linenumber { }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; position: relative !important; background-position: inherit inherit; background-repeat: inherit inherit; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; background-position: 0px 0px; background-repeat: initial initial; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print { 
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid-page; break-before: avoid-page; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid-page; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background-color: rgb(204, 204, 204); display: block; overflow-x: hidden; background-position: initial initial; background-repeat: initial initial; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) { 
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background-color: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; background-position: initial initial; background-repeat: initial initial; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; }
+a.md-print-anchor { white-space: pre !important; border: none !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; text-shadow: initial !important; background-position: 0px 0px !important; background-repeat: initial initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom-width: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background-color: rgb(255, 255, 0); color: rgb(0, 0, 0); background-position: initial initial; background-repeat: initial initial; }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print { 
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; background-position: inherit inherit; background-repeat: inherit inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow-y: auto; padding-bottom: 30px; padding-top: 60px; width: 300px; overflow-x: hidden; }
+@media screen and (max-width: 1024px) { 
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) { 
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.428571429rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ''; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ''; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left-width: 28px; border-left-style: solid; border-left-color: transparent; border-right-width: 28px; border-right-style: solid; border-right-color: transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ''; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right-width: 8px; border-right-style: solid; border-right-color: transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: '−'; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+
+
+/* cyrillic-ext */
+/* cyrillic */
+/* greek-ext */
+/* greek */
+/* vietnamese */
+/* latin-ext */
+/* latin */
+/* cyrillic-ext */
+/* cyrillic */
+/* greek-ext */
+/* greek */
+/* vietnamese */
+/* latin-ext */
+/* latin */
+/* cyrillic-ext */
+/* cyrillic */
+/* greek-ext */
+/* greek */
+/* vietnamese */
+/* latin-ext */
+/* latin */
+/* cyrillic-ext */
+/* cyrillic */
+/* greek-ext */
+/* greek */
+/* vietnamese */
+/* latin-ext */
+/* latin */
+@font-face {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 600;
+    src: local('Source Sans Pro SemiBold'), local('SourceSansPro-SemiBold'), url('file:///Users/zhangzhenfeng/Library/Application%20Support/abnerworks.Typora/themes/vue/6xKydSBYKcSV-LCoeQqfX1RYOo3i54rwlxdu.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}@import '';
+
+:root {
+    --side-bar-bg-color: #fff;
+    --control-text-color: #777;
+    --font-sans-serif: 'Ubuntu', 'Source Sans Pro', sans-serif !important;
+    --font-monospace: 'Fira Code', 'Roboto Mono', monospace !important;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-sans-serif);
+    color: #34495e;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6rem;
+    letter-spacing: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+#write {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 20px 30px 100px;
+}
+
+#write p {
+    line-height: 1.6rem;
+    word-spacing: .05rem;
+}
+
+#write ol li {
+    padding-left: 0.5rem;
+}
+
+#write > ul:first-child,
+#write > ol:first-child {
+    margin-top: 30px;
+}
+
+body > *:first-child {
+    margin-top: 0 !important;
+}
+
+body > *:last-child {
+    margin-bottom: 0 !important;
+}
+
+a {
+    color: #42b983;
+    font-weight: 600;
+    padding: 0 2px;
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+
+h1 tt,
+h1 code {
+    font-size: inherit !important;
+}
+
+h2 tt,
+h2 code {
+    font-size: inherit !important;
+}
+
+h3 tt,
+h3 code {
+    font-size: inherit !important;
+}
+
+h4 tt,
+h4 code {
+    font-size: inherit !important;
+}
+
+h5 tt,
+h5 code {
+    font-size: inherit !important;
+}
+
+h6 tt,
+h6 code {
+    font-size: inherit !important;
+}
+
+h2 a,
+h3 a {
+    color: #34495e;
+}
+
+h1 {
+    padding-bottom: .4rem;
+    font-size: 2.2rem;
+    line-height: 1.3;
+}
+
+h2 {
+    font-size: 1.75rem;
+    line-height: 1.225;
+    margin: 35px 0 15px;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid #ddd;
+}
+
+h3 {
+    font-size: 1.4rem;
+    line-height: 1.43;
+    margin: 20px 0 7px;
+}
+
+h4 {
+    font-size: 1.2rem;
+}
+
+h5 {
+    font-size: 1rem;
+}
+
+h6 {
+    font-size: 1rem;
+    color: #777;
+}
+
+p,
+blockquote,
+ul,
+ol,
+dl,
+table {
+    margin: 0.8em 0;
+}
+
+li > ol,
+li > ul {
+    margin: 0 0;
+}
+
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+body > h2:first-child {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+body > h1:first-child {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+body > h3:first-child,
+body > h4:first-child,
+body > h5:first-child,
+body > h6:first-child {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+a:first-child h1,
+a:first-child h2,
+a:first-child h3,
+a:first-child h4,
+a:first-child h5,
+a:first-child h6 {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+h1 p,
+h2 p,
+h3 p,
+h4 p,
+h5 p,
+h6 p {
+    margin-top: 0;
+}
+
+li p.first {
+    display: inline-block;
+}
+
+ul,
+ol {
+    padding-left: 30px;
+}
+
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+
+blockquote {
+    border-left: 4px solid #42b983;
+    padding: 10px 15px;
+    color: #777;
+    background-color: rgba(66, 185, 131, .1);
+}
+
+table {
+    padding: 0;
+    word-break: initial;
+}
+
+table tr {
+    border-top: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+
+table tr:nth-child(2n),
+thead {
+    background-color: #fafafa;
+}
+
+table tr th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    text-align: left;
+    margin: 0;
+    padding: 6px 13px;
+}
+
+table tr td {
+    border: 1px solid #dfe2e5;
+    text-align: left;
+    margin: 0;
+    padding: 6px 13px;
+}
+
+table tr th:first-child,
+table tr td:first-child {
+    margin-top: 0;
+}
+
+table tr th:last-child,
+table tr td:last-child {
+    margin-bottom: 0;
+}
+
+#write strong {
+    padding: 0 1px;
+}
+
+#write em {
+    padding: 0 5px 0 2px;
+}
+
+#write table thead th {
+    background-color: #f2f2f2;
+}
+
+#write .CodeMirror-gutters {
+    border-right: none;
+}
+
+#write .md-fences {
+    border: 1px solid #F4F4F4;
+    -webkit-font-smoothing: initial;
+    margin: 0.8rem 0 !important;
+    padding: 0.3rem 0 !important;
+    line-height: 1.43rem;
+    background-color: #F8F8F8 !important;
+    border-radius: 2px;
+    font-family: var(--font-monospace);
+    font-size: 0.85rem;
+    word-wrap: normal;
+}
+
+#write .CodeMirror-wrap .CodeMirror-code pre {
+    padding-left: 12px;
+}
+
+#write code, tt {
+    padding: 2px 4px;
+    border-radius: 2px;
+    font-family: var(--font-monospace);
+    font-size: 0.92rem;
+    color: #e96900;
+    background-color: #f8f8f8;
+}
+
+tt {
+    margin: 0 2px;
+}
+
+#write .md-footnote {
+    background-color: #f8f8f8;
+    color: #e96900;
+}
+
+/* heighlight. */
+#write mark {
+    background-color: #EBFFEB;
+    border-radius: 2px;
+    padding: 2px 4px;
+    margin: 0 2px;
+    color: #222;
+    font-weight: 500;
+}
+
+#write del {
+    padding: 1px 2px;
+}
+
+.cm-s-inner .cm-link,
+.cm-s-inner.cm-link {
+    color: #22a2c9;
+}
+
+.cm-s-inner .cm-string {
+    color: #22a2c9;
+}
+
+.md-task-list-item > input {
+    margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+    background-color: #f8f8f8;
+}
+
+.md-diagram-panel {
+    position: static !important;
+}
+
+#write pre.md-meta-block {
+    padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block > .code-tooltip {
+    bottom: .375rem;
+}
+
+#write > h3.md-focus:before {
+    left: -1.5625rem;
+    top: .375rem;
+}
+
+#write > h4.md-focus:before {
+    left: -1.5625rem;
+    top: .285714286rem;
+}
+
+#write > h5.md-focus:before {
+    left: -1.5625rem;
+    top: .285714286rem;
+}
+
+#write > h6.md-focus:before {
+    left: -1.5625rem;
+    top: .285714286rem;
+}
+
+.md-image > .md-meta {
+    border-radius: 3px;
+    font-family: var(--font-monospace);
+    padding: 2px 0 0 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: inherit;
+}
+
+.md-toc {
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+#md-notification:before {
+    top: 10px;
+}
+
+/** focus mode */
+
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header,
+.context-menu,
+.megamenu-content,
+footer {
+    font-family: var(--font-sans-serif);
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state {
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+.html-for-mac .context-menu {
+    --item-hover-bg-color: #E6F0FE;
+}
+
+
+ @media print { @page {margin: 0 0 0 0;} body.typora-export {padding-left: 0; padding-right: 0;} #write {padding:0;}}
+</style><title>html5</title>
+</head>
+<body class='typora-export'><div class='typora-export-content'>
+<div id='write'  class=''><h1 id='前端-htmlhtml5-核心标签和属性'><span>前端 HTML/HTML5 核心标签和属性</span></h1><h2 id='1文档声明文档结构功能标签'><span>1、文档声明、文档结构、功能标签</span></h2><figure><table><thead><tr><th style='text-align:left;' ><span>分类</span></th><th><strong><span>标签名称</span></strong></th><th><span>描述</span></th></tr></thead><tbody><tr><td style='text-align:left;' ><span>文档声明</span></td><td><strong><code>&lt;!DOCTYPE&gt;</code></strong></td><td><span>用于告诉浏览器此文档的类型是什么</span><br><span>处于</span><code>&lt;html&gt;</code><strong><span>标签之前。用于告诉浏览器此文档的类型是什么。目前开发中常用的声明是</span></strong><code>&lt;!DOCTYPE html&gt;</code><span>，表示声明一个 HTML5 文档。</span><br><span>它不属于 HTML 标签，而是一条指令</span></td></tr><tr><td style='text-align:left;' ><span>文档结构标签</span></td><td><span>html，head，title，body</span></td><td><span>1）html 标签：每创建一个 HTML 文件，都需要创建 html 标签对。除了声明文档类型的代码，其他的所有内容都存放在 html 标签对中；</span><br><span>（2） head 标签：定义文档的头部，用来包含网页的配置（例如网页的标题 title，网页的基础配置 meta 都放在 head 中）；</span><br><span>（3）title 标签：定义网页的标题，标题内容会显示在浏览器的标签栏上</span><br><span>（4）body 标签：定义网页的主体，例如：网页中的图片、文字等</span></td></tr><tr><td style='text-align:left;' ><span>功能标签</span></td><td><span>me ta</span></td><td><span>元标签，用来表示网页的基础配置</span></td></tr></tbody></table></figure><h2 id='2块级元素'><span>2、块级元素</span></h2><figure><table><thead><tr><th style='text-align:left;' ><span>标签名称</span></th><th style='text-align:left;' ><span>描述</span></th></tr></thead><tbody><tr><td style='text-align:left;' ><span>h1 ~ h6</span></td><td style='text-align:left;' ><span>一级标题 ~ 六级标题</span></td></tr><tr><td style='text-align:left;' ><span>p</span></td><td style='text-align:left;' ><span>段落标签，用来描述网页中的段落内容</span></td></tr><tr><td style='text-align:left;' ><span>div</span></td><td style='text-align:left;' ><span>用于页面区域的划分。它就像一个容器，用来放某一个区域的内容</span></td></tr><tr><td style='text-align:left;' ><span>ul，ol</span></td><td style='text-align:left;' ><span>定义无序列表，定义有序列表</span></td></tr><tr><td style='text-align:left;' ><span>li</span></td><td style='text-align:left;' ><span>定义列表项，与 ul 或者 ol 配合使用</span></td></tr><tr><td style='text-align:left;' ><span>dt，dd</span></td><td style='text-align:left;' ><span>定义列表中的项目， 描述列表中的项目</span></td></tr><tr><td style='text-align:left;' ><span>figure</span></td><td style='text-align:left;' ><span>定义一段独立的内容（不常用，了解即可）</span></td></tr><tr><td style='text-align:left;' ><span>figcaption</span></td><td style='text-align:left;' ><span>定义 figure 元素的标题（不常用，了解即可）</span></td></tr><tr><td style='text-align:left;' ><span>form</span></td><td style='text-align:left;' ><span>表单标签，里面包含很多搜集信息的表单元素，如输入框，复选框等</span></td></tr><tr><td style='text-align:left;' ><span>table，canvas</span></td><td style='text-align:left;' ><span>定义 HTML 表格，通过脚本（通常是 JavaScript）来绘制图形</span></td></tr><tr><td style='text-align:left;' ><span>pre</span></td><td style='text-align:left;' ><span>预格式化的文本</span></td></tr></tbody></table></figure><h2 id='3区块标签'><span>3、区块标签</span></h2><blockquote><p><span>注：html5 新增的语义化标签</span></p></blockquote><figure><table><thead><tr><th style='text-align:left;' ><span>标签名称</span></th><th style='text-align:left;' ><span>描述</span></th></tr></thead><tbody><tr><td style='text-align:left;' ><span>header</span></td><td style='text-align:left;' ><span>定义页头</span></td></tr><tr><td style='text-align:left;' ><span>nav</span></td><td style='text-align:left;' ><span>定义导航</span></td></tr><tr><td style='text-align:left;' ><span>main</span></td><td style='text-align:left;' ><span>定义页面的主体区域</span></td></tr><tr><td style='text-align:left;' ><span>aside</span></td><td style='text-align:left;' ><span>可用作文章的侧栏</span></td></tr><tr><td style='text-align:left;' ><span>article</span></td><td style='text-align:left;' ><span>可用作文章的内容</span></td></tr><tr><td style='text-align:left;' ><span>section</span></td><td style='text-align:left;' ><span>可用作文档的区域块，类似于 div</span></td></tr><tr><td style='text-align:left;' ><span>footer</span></td><td style='text-align:left;' ><span>定义页脚</span></td></tr></tbody></table></figure><h2 id='4内联元素'><span>4、内联元素</span></h2><blockquote><p><span>注：内联元素不会自占一行，与其他内联元素在同一行显示，且宽高由内容撑起。</span></p></blockquote><p>&nbsp;</p><figure><table><thead><tr><th style='text-align:left;' ><span>标签名称</span></th><th style='text-align:left;' ><span>描述</span></th></tr></thead><tbody><tr><td style='text-align:left;' ><span>a</span></td><td style='text-align:left;' ><span>超链接标签，用于从一张页面链接到另一张页面</span></td></tr><tr><td style='text-align:left;' ><span>span</span></td><td style='text-align:left;' ><span>用来组合文档中的行内元素，一般用来包裹文字</span></td></tr><tr><td style='text-align:left;' ><span>label</span></td><td style='text-align:left;' ><span>为 input 元素定义标注（标记）label 可设置 for 属性</span></td></tr><tr><td style='text-align:left;' ><span>b，u</span></td><td style='text-align:left;' ><span>字体加粗标签，下划线文本标签（不常用，了解即可）</span></td></tr><tr><td style='text-align:left;' ><span>i，strong</span></td><td style='text-align:left;' ><span>斜体文本标签，用于强调文本的标签字体会加粗（不常用，了解即可）</span></td></tr><tr><td style='text-align:left;' ><span>em</span></td><td style='text-align:left;' ><span>用于强调文本的标签，字体变成斜体（不常用，了解即可）</span></td></tr><tr><td style='text-align:left;' ><span>mark</span></td><td style='text-align:left;' ><span>突出显示文本的标签，字体会有背景颜色，默认的是黄色（不常用，了解即可）</span></td></tr><tr><td style='text-align:left;' ><span>datalist</span></td><td style='text-align:left;' ><span>标签/控件，需要结合 option 标签使用（不常用，了解即可）</span></td></tr></tbody></table></figure><h2 id='5特殊内联元素'><span>5、特殊内联元素</span></h2><blockquote><p><span>注：可以设置宽高，但不独占一行</span></p></blockquote><figure><table><thead><tr><th style='text-align:left;' ><span>标签名称</span></th><th style='text-align:left;' ><span>描述</span></th></tr></thead><tbody><tr><td style='text-align:left;' ><span>img</span></td><td style='text-align:left;' ><span>图片标签，用于在网页中嵌入图片</span></td></tr><tr><td style='text-align:left;' ><span>audio</span></td><td style='text-align:left;' ><span>音频标签，用于在页面中引入音频</span></td></tr><tr><td style='text-align:left;' ><span>video</span></td><td style='text-align:left;' ><span>视频标签，用于在页面中引入视频</span></td></tr><tr><td style='text-align:left;' ><span>input</span></td><td style='text-align:left;' ><span>定义用户可输入数据的输入字段。例如登录页面的用户名和密码框，都是使用 input 标签</span></td></tr><tr><td style='text-align:left;' ><span>select</span></td><td style='text-align:left;' ><span>定义下拉列表</span></td></tr><tr><td style='text-align:left;' ><span>option</span></td><td style='text-align:left;' ><span>定义下拉列表项，需要与 select 配合使用（块元素，写在这里是因为它需要跟 select 标签一起使用）</span></td></tr><tr><td style='text-align:left;' ><span>textarea</span></td><td style='text-align:left;' ><span>定义多行文本框，常用于留言框、备注框等</span></td></tr></tbody></table></figure><h2 id='6转义字符'><span>6、转义字符</span></h2><figure><table><thead><tr><th style='text-align:left;' ><span>标签名</span></th><th style='text-align:left;' ><span>描述</span></th></tr></thead><tbody><tr><td style='text-align:left;' ><strong><code></code></strong></td><td style='text-align:left;' ><span>表示空格符号</span></td></tr><tr><td style='text-align:left;' ><strong><code>&lt;</code></strong></td><td style='text-align:left;' ><span>表示小于号“&lt;”</span></td></tr><tr><td style='text-align:left;' ><strong><code>&gt;</code></strong></td><td style='text-align:left;' ><span>表示大于号“&gt;”</span></td></tr><tr><td style='text-align:left;' ><strong><code>©</code></strong></td><td style='text-align:left;' ><span>表示版权符号“©”</span></td></tr></tbody></table></figure><h2 id='7表格标签'><span>7、表格标签</span></h2><figure><table><thead><tr><th style='text-align:left;' ><span>标签名</span></th><th style='text-align:left;' ><span>描述</span></th></tr></thead><tbody><tr><td style='text-align:left;' ><span>table</span></td><td style='text-align:left;' ><span>表格标签</span></td></tr><tr><td style='text-align:left;' ><span>tr</span></td><td style='text-align:left;' ><span>表格行</span></td></tr><tr><td style='text-align:left;' ><span>td</span></td><td style='text-align:left;' ><span>表格列</span></td></tr><tr><td style='text-align:left;' ><span>th</span></td><td style='text-align:left;' ><span>标签，可替代 td 标签，用来设置表格的标题</span></td></tr><tr><td style='text-align:left;' ><span>thead</span></td><td style='text-align:left;' ><span>定义表格头部</span></td></tr><tr><td style='text-align:left;' ><span>tbody</span></td><td style='text-align:left;' ><span>定义表格主体内容</span></td></tr><tr><td style='text-align:left;' ><span>tfoot</span></td><td style='text-align:left;' ><span>定义表格尾部</span></td></tr><tr><td style='text-align:left;' ><span>caption</span></td><td style='text-align:left;' ><span>设置表格的标题</span></td></tr></tbody></table></figure><h2 id='8标签中的属性'><span>8、标签中的属性</span></h2><figure><table><thead><tr><th style='text-align:left;' ><span>属性名</span></th><th style='text-align:left;' ><span>描述</span></th></tr></thead><tbody><tr><td style='text-align:left;' ><span>lang</span></td><td style='text-align:left;' ><span>html 标签的属性，用来标记网页的语言； 常见属性值有：&quot;en&quot;和&quot;zh&quot;；en 代表英语, zh 代表中文</span></td></tr><tr><td style='text-align:left;' ><span>charset</span></td><td style='text-align:left;' ><span>meta 标签的属性，声明页面文档使用的字符编码类型。 常用的属性值有：UTF-8 和 GB2312</span></td></tr><tr><td style='text-align:left;' ><span>type</span></td><td style='text-align:left;' ><span>修改无序列表与有序列表默认的前导样式（已被废弃，了解即可） 1、type 属性写在无序列表中，属性值有： （1）disc：默认值，实心圆样式 （2）circle： 空心圆样式 （3）square：实心方块样式 2、type 属性写在有序列表中，属性值有： （1）1：默认值，数字编号 （2）A：大写英文编号 （3）i：小写罗马数字编号 （4）I：大写罗马数字编号 （5）a：小写英文编号</span></td></tr><tr><td style='text-align:left;' ><span>start</span></td><td style='text-align:left;' ><span>有序列表的属性，指定列表编号的起始值，能修改有序列表标签默认的前导样式（不常用，了解即可）</span></td></tr><tr><td style='text-align:left;' ><span>reversed</span></td><td style='text-align:left;' ><span>有序列表的属性，指定列表中的条目是否倒序排列的（不常用，了解即可）</span></td></tr><tr><td style='text-align:left;' ><span>src</span></td><td style='text-align:left;' ><span>（1）img 标签的属性，指定图片的路径 （2）audio 标签和 video 标签也可以设置 src 属性，指定音频、视频的路径</span></td></tr><tr><td style='text-align:left;' ><span>alt</span></td><td style='text-align:left;' ><span>img 标签的属性，用来对引入的图片进行文本描述</span></td></tr><tr><td style='text-align:left;' ><span>width</span></td><td style='text-align:left;' ><span>规定元素的宽度。此属性不常用，了解即可。后续学习 css，会使用 css 样式设置元素宽度</span></td></tr><tr><td style='text-align:left;' ><span>height</span></td><td style='text-align:left;' ><span>规定元素的高度。此属性不常用，了解即可。后续学习 css，会使用 css 样式设置元素高度。 注意，height 或者 width 如果省略其中一个属性，则按照图片原始比例缩放图片</span></td></tr><tr><td style='text-align:left;' ><span>href</span></td><td style='text-align:left;' ><span>a 标签属性，规定该链接要跳转到目标页面的地址</span></td></tr><tr><td style='text-align:left;' ><span>title</span></td><td style='text-align:left;' ><span>a 标签属性，设置鼠标悬停的文本</span></td></tr><tr><td style='text-align:left;' ><span>target</span></td><td style='text-align:left;' ><span>a 标签属性，规定在何处打开链接文档； 如果属性值为 blank 或_blank，会打开新的标签页</span></td></tr><tr><td style='text-align:left;' ><span>controls</span></td><td style='text-align:left;' ><span>audio/video 的属性，用于显示播放控件</span></td></tr><tr><td style='text-align:left;' ><span>autoplay</span></td><td style='text-align:left;' ><span>audio/video 的属性，设置音频/视频自动播放</span></td></tr><tr><td style='text-align:left;' ><span>loop</span></td><td style='text-align:left;' ><span>audio/video 的属性，设置音频/视频可以循环播放</span></td></tr><tr><td style='text-align:left;' ><span>class</span></td><td style='text-align:left;' ><span>所有标签都可以使用这个属性，用来定义元素的类名（后续学习 css，会有详细的讲解）</span></td></tr><tr><td style='text-align:left;' ><span>action</span></td><td style='text-align:left;' ><span>form 标签的属性，用来设置 form 表单的数据要提交到哪个地址。提交到哪个地址，后端开发会告诉我们（不常用，了解一下。提交数据常用 ajax，后面会学习到的）</span></td></tr><tr><td style='text-align:left;' ><span>method</span></td><td style='text-align:left;' ><span>form 标签的属性，用来设置表单的提交方式，常用的方式有 get 或 post（不常用，了解即可）</span></td></tr><tr><td style='text-align:left;' ><span>rows</span></td><td style='text-align:left;' ><span>textarea 标签属性，设置多行文本框有多少行</span></td></tr><tr><td style='text-align:left;' ><span>cols</span></td><td style='text-align:left;' ><span>textarea 标签属性，设置多行文本框有多少列</span></td></tr><tr><td style='text-align:left;' ><span>list</span></td><td style='text-align:left;' ><span>datalist 控件的属性，二者结合，可以与输入框绑定，为输入框设置备选项（不常用，了解即可）</span></td></tr><tr><td style='text-align:left;' ><span>border</span></td><td style='text-align:left;' ><span>边框属性，可为 table 添加边框</span></td></tr><tr><td style='text-align:left;' ><span>border-collapse</span></td><td style='text-align:left;' ><span>css 样式，通常给表格设置 border-collapse：collapse；让表格边框合并，成为单线表格;</span></td></tr><tr><td style='text-align:left;' ><span>colspan</span></td><td style='text-align:left;' ><span>表格标签的属性，实现跨列合并的效果，用来设置 td 或 th 跨列合并</span></td></tr><tr><td style='text-align:left;' ><span>rowspan</span></td><td style='text-align:left;' ><span>表格标签的属性，实现跨行合并的效果，用来设置 td 或 th 跨行合并</span></td></tr><tr><td style='text-align:left;' ><span>cellspacing</span></td><td style='text-align:left;' ><span>设置表格单元格内容与边框之间的间隙（不常用，了解即可）</span></td></tr><tr><td style='text-align:left;' ><span>cellpadding</span></td><td style='text-align:left;' ><span>设置两个单元格之间的间隙（不常用，了解即可）</span></td></tr></tbody></table></figure><h2 id='9input-元素中的属性'><span>9、input 元素中的属性</span></h2><figure><table><thead><tr><th style='text-align:left;' ><span>属性名称</span></th><th style='text-align:left;' ><span>描述</span></th></tr></thead><tbody><tr><td style='text-align:left;' ><span>type</span></td><td style='text-align:left;' ><span>用来定义表单元素的类型。属性值如下： （1）text：单行文本输入框 （2）radio：单选按钮 （3）checkbox：复选框 （4）password：密码框 （5）button：普通按钮，也可以直接写成 button 按钮，例如：</span><code>&lt;button&gt;按钮标签&lt;/button&gt;</code><span> （6）submit：提交按钮 （7）reset：重置按钮 （8）color：颜色控件（不常用，了解即可） （9）date：日期控件 （10）time：时间控件 （11）email：电子邮件输入控件 （12）file：文件选择控件，需要上传本地文件时，可以使用它 （13）number：表示数字输入控件 （14）range：表示拖拽条（不常用，了解即可） （15）search：t 表示搜索框（不常用，了解即可） （16）url：表示网址输入控件</span></td></tr><tr><td style='text-align:left;' ><span>value</span></td><td style='text-align:left;' ><span>用于为 input 元素设定值，value 值一般是给后端发送数据时使用，后续学习了相关课程就会了解</span></td></tr><tr><td style='text-align:left;' ><span>name</span></td><td style='text-align:left;' ><span>规定 input 元素的名称</span></td></tr><tr><td style='text-align:left;' ><span>checked</span></td><td style='text-align:left;' ><span>用来设置单选按钮、多选按钮的默认选中项</span></td></tr><tr><td style='text-align:left;' ><span>placeholder</span></td><td style='text-align:left;' ><span>表示提示文本，用来设置输入框的提示信息，告诉用户该输入框需要输入什么内容</span></td></tr><tr><td style='text-align:left;' ><span>disabled</span></td><td style='text-align:left;' ><span>用于禁用 input 元素，表示只读</span></td></tr><tr><td style='text-align:left;' ><span>max</span></td><td style='text-align:left;' ><span>max 表示最大值，表示数字输入控件（即 type=&quot;number&quot;的 input 元素）允许输入的最大值</span></td></tr><tr><td style='text-align:left;' ><span>min</span></td><td style='text-align:left;' ><span>min 表示最小值，最小值，表示数字输入控件（即 type=&quot;number&quot;的 input 元素）允许输入的最小值</span></td></tr><tr><td style='text-align:left;' ><span>require</span></td><td style='text-align:left;' ><span>表示必填字段，约束某项内容是必填项，比如规定”用户名“项，是必填项</span></td></tr></tbody></table></figure><h2 id='10标签嵌套规则'><span>10、标签嵌套规则</span></h2><blockquote><p><span>总结</span></p><p><span>块级元素中，可以放块级元素也可以放内联元素。</span></p><blockquote><p><span>特殊情况：p 标签 和 h 标签中 只能放内联元素 或 文本内容，不能放其他块级元素</span></p></blockquote><p><span>行内元素中，只能放文本内容。</span></p><blockquote><p><span>特殊情况：a 标签中可以放块级元素</span></p></blockquote></blockquote><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p></div></div>
+</body>
+</html>
